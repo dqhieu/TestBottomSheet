@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Shield } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { wrapModule } from '@grabjs/mobile-kit-bridge-sdk';
 
 export default function BottomSheet() {
   const sheetRef = useRef<HTMLDivElement>(null);
@@ -20,30 +21,23 @@ export default function BottomSheet() {
     }
   }, []);
 
+  const handleGotItClick = async () => {
+    console.log('Got It clicked');
+    const data = {
+      "type": "CloseDetail",
+      "params": {
+        key: "A string to identify this request",
+        payload: { }
+      }
+    };
+    window.webkit.messageHandlers.onNativeCalled.postMessage(JSON.stringify(data));
+  };
+
   return (
     <div ref={sheetRef} className="w-full ">
       <div className="fixed inset-0 bg-black/50 bg-white " />
       <div className="relative z-50 ">
         <div className="bg-white w-full mx-auto rounded-t-3xl p-6 pb- 8">
-          {/* Close button */}
-          <div className="flex justify-end mb-4">
-            <button
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
 
           {/* Image */}
           <div className="rounded-2xl mb-8">
@@ -84,6 +78,7 @@ export default function BottomSheet() {
 
           {/* Button */}
           <button
+            onClick={handleGotItClick}
             className="w-full bg-[#4CAF50] text-white py-4 rounded-full mt-8 text-xl font-medium hover:bg-[#43A047] transition-colors"
           >
             Got it

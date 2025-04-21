@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@grabjs/mobile-kit-bridge-sdk": "^2.2.2",
     "lucide-react": "^0.501.0",
     "next": "15.3.1",
     "react": "^19.0.0",
