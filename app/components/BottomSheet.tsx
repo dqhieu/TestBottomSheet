@@ -8,7 +8,7 @@ interface BottomSheetProps {
 export default function BottomSheet({ onClose }: BottomSheetProps) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-start justify-center">
-      <div className="bg-white w-full max-w-md rounded-b-3xl p-6 pb-8 mt-0">
+      <div className="bg-white w-full max-w-md rounded-t-3xl p-6 pb-8 mt-0">
         {/* Close button */}
         <div className="flex justify-end mb-4">
           <button
@@ -31,13 +31,13 @@ export default function BottomSheet({ onClose }: BottomSheetProps) {
         </div>
 
         {/* Image */}
-        <div className="bg-[#FFF1F1] rounded-2xl p-6 mb-8">
+        <div className="rounded-2xl mb-8">
           <Image
-            src="/car-wheelchair.png"
+            src="/kids-safety.svg"
             alt="Car safety illustration"
             width={300}
             height={200}
-            className="w-full h-auto"
+            className="w-full h-auto rounded-2xl"
           />
         </div>
 
