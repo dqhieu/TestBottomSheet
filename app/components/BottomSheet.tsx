@@ -24,7 +24,7 @@ export default function BottomSheet() {
     <div ref={sheetRef} className="w-full">
       <div className="fixed inset-0 bg-black/50" />
       <div className="relative z-50">
-        <div className="bg-white w-full max-w-md mx-auto rounded-t-3xl p-6 pb-8">
+        <div className="bg-white w-full mx-auto rounded-t-3xl p-6 pb-8">
           {/* Close button */}
           <div className="flex justify-end mb-4">
             <button
