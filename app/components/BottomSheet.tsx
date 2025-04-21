@@ -23,11 +23,7 @@ export default function BottomSheet() {
   const handleGotItClick = async () => {
     console.log('Got It clicked');
     const data = {
-      "type": "CloseDetail",
-      "params": {
-        key: "A string to identify this request",
-        payload: { }
-      }
+      "type": "CloseDetail"
     };
     window.webkit.messageHandlers.onNativeCalled.postMessage(JSON.stringify(data));
   };
