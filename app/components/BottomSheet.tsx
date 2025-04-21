@@ -32,7 +32,7 @@ export default function BottomSheet() {
     <div ref={sheetRef} className="w-full ">
       <div className="fixed inset-0 bg-black/50 bg-white " />
       <div className="relative z-50 ">
-        <div className="bg-white w-full mx-auto rounded-t-3xl p-6 pb- 8">
+        <div className="bg-white w-full mx-auto rounded-t-3xl p-6 pb-8 flex flex-col h-full">
 
           {/* Image */}
           <div className="rounded-2xl mb-8">
@@ -48,7 +48,7 @@ export default function BottomSheet() {
           {/* Content */}
           <h2 className="text-3xl font-semibold mb-8">Extra Safety for your kids</h2>
 
-          <div className="h-[200px] overflow-y-auto pr-2">
+          <div className="flex-1 h-[200px] overflow-y-auto pr-2">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <Shield className="w-6 h-6 text-gray-700 mt-1" />
@@ -113,12 +113,14 @@ export default function BottomSheet() {
           </div>
 
           {/* Button */}
-          <button
-            onClick={handleGotItClick}
-            className="w-full bg-[#4CAF50] text-white py-4 rounded-full mt-8 text-xl font-medium hover:bg-[#43A047] transition-colors"
-          >
-            Got it
-          </button>
+          <div className="sticky bottom-0 pt-4 bg-white">
+            <button
+              onClick={handleGotItClick}
+              className="w-full bg-[#4CAF50] text-white py-4 rounded-full text-xl font-medium hover:bg-[#43A047] transition-colors"
+            >
+              Got it
+            </button>
+          </div>
         </div>
       </div>
     </div>
