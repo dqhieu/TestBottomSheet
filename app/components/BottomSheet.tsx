@@ -113,7 +113,7 @@ export default function BottomSheet() {
           </div>
 
           {/* Button */}
-          <div className="sticky bottom-0 pt-4 bg-white">
+          <div className="sticky bottom-0 py-8 bg-white">
             <button
               onClick={handleGotItClick}
               className="w-full bg-[#4CAF50] text-white py-4 rounded-full text-xl font-medium hover:bg-[#43A047] transition-colors"
