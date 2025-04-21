@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Shield } from 'lucide-react';
 import { useEffect, useRef } from 'react';
-import { wrapModule } from '@grabjs/mobile-kit-bridge-sdk';
 
 export default function BottomSheet() {
   const sheetRef = useRef<HTMLDivElement>(null);
