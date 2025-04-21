@@ -50,12 +50,6 @@ export default function BottomSheet() {
 
           <div className="flex-1 h-[200px] overflow-y-auto pr-2">
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <Shield className="w-6 h-6 text-gray-700 mt-1" />
-                <p className="text-gray-700 text-lg">
-                  We have insurance for your kids. Put CVP when we get it from the country team
-                </p>
-              </div>
 
               <div className="flex items-start gap-4">
                 <Shield className="w-6 h-6 text-gray-700 mt-1" />
