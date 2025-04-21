@@ -48,26 +48,67 @@ export default function BottomSheet() {
           {/* Content */}
           <h2 className="text-3xl font-semibold mb-8">Extra Safety for your kids</h2>
 
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <Shield className="w-6 h-6 text-gray-700 mt-1" />
-              <p className="text-gray-700 text-lg">
-                We have insurance for your kids. Put CVP when we get it from the country team
-              </p>
-            </div>
+          <div className="h-[200px] overflow-y-auto pr-2">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  We have insurance for your kids. Put CVP when we get it from the country team
+                </p>
+              </div>
 
-            <div className="flex items-start gap-4">
-              <Shield className="w-6 h-6 text-gray-700 mt-1" />
-              <p className="text-gray-700 text-lg">
-                Subtitle placeholder for CVP
-              </p>
-            </div>
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
 
-            <div className="flex items-start gap-4">
-              <Shield className="w-6 h-6 text-gray-700 mt-1" />
-              <p className="text-gray-700 text-lg">
-                Subtitle placeholder for CVP
-              </p>
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-gray-700 mt-1" />
+                <p className="text-gray-700 text-lg">
+                  Subtitle placeholder for CVP
+                </p>
+              </div>
             </div>
           </div>
 
