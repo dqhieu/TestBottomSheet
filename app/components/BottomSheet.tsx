@@ -21,9 +21,9 @@ export default function BottomSheet() {
   const handleGotItClick = async () => {
     console.log('Got It clicked');
     const data = {
-      "type": "CloseDetail"
+      "method": "close"
     };
-    window.webkit.messageHandlers.onNativeCalled.postMessage(JSON.stringify(data));
+    window.webkit.messageHandlers.ContainerModule.postMessage(JSON.stringify(data));
   };
 
   return (

@@ -1,7 +1,7 @@
 interface Window {
   webkit: {
     messageHandlers: {
-      onNativeCalled: {
+      ContainerModule: {
         postMessage(message: string): void;
       };
     };
