@@ -30,6 +30,11 @@ export default function BottomSheet({ isShort = false }: BottomSheetProps) {
     window.webkit.messageHandlers.ContainerModule.postMessage(JSON.stringify(data));
   };
 
+  const handleAirportClick = (airport: string) => {
+    console.log(`Airport selected: ${airport}`);
+    window.location.href = 'https://www.grab.com';
+  };
+
   // Define all country data
   const countryData = [
     {
@@ -113,7 +118,11 @@ export default function BottomSheet({ isShort = false }: BottomSheetProps) {
                   
                   <div className="space-y-5 pl-11">
                     {item.airports.map((airport, airportIndex) => (
-                      <div key={airportIndex} className="block text-gray-600 text-lg w-full text-left">
+                      <div 
+                        key={airportIndex} 
+                        className="block text-gray-600 text-lg w-full text-left cursor-pointer hover:text-blue-600 transition-colors"
+                        onClick={() => handleAirportClick(airport)}
+                      >
                         {airport}
                       </div>
                     ))}
