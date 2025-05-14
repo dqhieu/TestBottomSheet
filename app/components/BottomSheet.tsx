@@ -1,6 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-export default function BottomSheet() {
+interface BottomSheetProps {
+  isShort?: boolean;
+}
+
+export default function BottomSheet({ isShort = false }: BottomSheetProps) {
   const sheetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,6 +30,59 @@ export default function BottomSheet() {
     window.webkit.messageHandlers.ContainerModule.postMessage(JSON.stringify(data));
   };
 
+  // Define all country data
+  const countryData = [
+    {
+      country: "Indonesia",
+      emoji: "🇮🇩",
+      airports: [
+        "Soekarno-Hatta (CGK)",
+        "Yogyakarta (JOG)",
+        "Denpasar (DPS)",
+        "Surabaya (SUB)"
+      ]
+    },
+    {
+      country: "Malaysia",
+      emoji: "🇲🇾",
+      airports: [
+        "Kuala Lumpur International (KUL)"
+      ]
+    },
+    {
+      country: "Singapore",
+      emoji: "🇸🇬",
+      airports: [
+        "Singapore Changi (SIN)",
+        "Seletar (XSP)"
+      ]
+    },
+    {
+      country: "Vietnam",
+      emoji: "🇻🇳",
+      airports: [
+        "Tan Son Nhat International (SGN)",
+        "Noi Bai International (HAN)",
+        "Da Nang International (DAD)",
+        "Phu Quoc International (PQC)"
+      ]
+    },
+    {
+      country: "Philippines",
+      emoji: "🇵🇭",
+      airports: [
+        "Ninoy Aquino International (MNL)",
+        "Mactan-Cebu International (CEB)",
+        "Clark International (CRK)",
+        "Davao International (DVO)",
+        "Iloilo International (ILO)"
+      ]
+    }
+  ];
+
+  // Display only first country if isShort is true, otherwise display all countries
+  const countriesToDisplay = isShort ? [countryData[0]] : countryData;
+
   return (
     <div ref={sheetRef} className="w-full">
       <div className="fixed inset-0 bg-black/50 bg-white" />
@@ -47,108 +104,22 @@ export default function BottomSheet() {
           {/* Countries and Airports List */}
           <div className="flex-1 overflow-y-auto pr-2 px-6">
             <div className="space-y-6">
-              {/* Indonesia */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🇮🇩</span>
-                  <span className="text-xl font-medium">Indonesia</span>
-                </div>
-                
-                <div className="space-y-5 pl-11">
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Soekarno-Hatta (CGK)
+              {countriesToDisplay.map((item, index) => (
+                <div key={index}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-2xl">{item.emoji}</span>
+                    <span className="text-xl font-medium">{item.country}</span>
                   </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Yogyakarta (JOG)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Denpasar (DPS)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Surabaya (SUB)
+                  
+                  <div className="space-y-5 pl-11">
+                    {item.airports.map((airport, airportIndex) => (
+                      <div key={airportIndex} className="block text-gray-600 text-lg w-full text-left">
+                        {airport}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-
-              {/* Malaysia */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🇲🇾</span>
-                  <span className="text-xl font-medium">Malaysia</span>
-                </div>
-                
-                <div className="space-y-5 pl-11">
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Kuala Lumpur International (KUL)
-                  </div>
-                </div>
-              </div>
-
-              {/* Singapore */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🇸🇬</span>
-                  <span className="text-xl font-medium">Singapore</span>
-                </div>
-                
-                <div className="space-y-5 pl-11">
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Singapore Changi (SIN)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Seletar (XSP)
-                  </div>
-                </div>
-              </div>
-
-              {/* Vietnam */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🇻🇳</span>
-                  <span className="text-xl font-medium">Vietnam</span>
-                </div>
-                
-                <div className="space-y-5 pl-11">
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Tan Son Nhat International (SGN)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Noi Bai International (HAN)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Da Nang International (DAD)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Phu Quoc International (PQC)
-                  </div>
-                </div>
-              </div>
-
-              {/* Philippines */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🇵🇭</span>
-                  <span className="text-xl font-medium">Philippines</span>
-                </div>
-                
-                <div className="space-y-5 pl-11">
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Ninoy Aquino International (MNL)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Mactan-Cebu International (CEB)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Clark International (CRK)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Davao International (DVO)
-                  </div>
-                  <div className="block text-gray-600 text-lg w-full text-left">
-                    Iloilo International (ILO)
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 

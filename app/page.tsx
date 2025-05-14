@@ -3,5 +3,5 @@
 import BottomSheet from './components/BottomSheet';
 
 export default function Home() {
-  return <BottomSheet />;
+  return <BottomSheet isShort={false} />;
 }
