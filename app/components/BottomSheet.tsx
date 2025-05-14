@@ -123,6 +123,32 @@ export default function BottomSheet() {
                   </div>
                 </div>
               </div>
+
+              {/* Philippines */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">🇵🇭</span>
+                  <span className="text-xl font-medium">Philippines</span>
+                </div>
+                
+                <div className="space-y-5 pl-11">
+                  <div className="block text-gray-600 text-lg w-full text-left">
+                    Ninoy Aquino International (MNL)
+                  </div>
+                  <div className="block text-gray-600 text-lg w-full text-left">
+                    Mactan-Cebu International (CEB)
+                  </div>
+                  <div className="block text-gray-600 text-lg w-full text-left">
+                    Clark International (CRK)
+                  </div>
+                  <div className="block text-gray-600 text-lg w-full text-left">
+                    Davao International (DVO)
+                  </div>
+                  <div className="block text-gray-600 text-lg w-full text-left">
+                    Iloilo International (ILO)
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
